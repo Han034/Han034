@@ -155,10 +155,6 @@ def header(c):
     b.append(f'<circle cx="{PAD + 12}" cy="{PAD + 12}" r="3" fill="{c["pos"]}">'
              '<animate attributeName="opacity" values="1;.35;1" dur="2.4s" repeatCount="indefinite"/></circle>')
     b.append(t(PAD + 22, PAD + 16.2, live, 11.5, c["ink2"], 600))
-    # monogram: the one place the brand colour lives
-    b.append(f'<circle cx="{W - PAD - 28}" cy="{PAD + 28}" r="28" fill="{c["raised"]}"/>')
-    b.append(t(W - PAD - 28, PAD + 34.5, "MB", 17, c["ink"], 700, "middle", tracking=-0.3))
-    b.append(f'<circle cx="{W - PAD - 8}" cy="{PAD + 48}" r="5" fill="{c["brand"]}" stroke="{c["card"]}" stroke-width="3"/>')
     # name + role
     b.append(t(PAD, 118, "Mehmet Emin Becek", 44, c["ink"], 700, tracking=-1.5))
     b.append(t(PAD, 148, "Full-Stack Software Engineer · AI Systems Architect", 15, c["ink2"]))
