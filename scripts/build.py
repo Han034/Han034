@@ -14,22 +14,41 @@ PAD = 32         # --s-8
 INNER = W - 2 * PAD
 FONT = "Inter, 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"
 
-# calm-ui mono / light, with the card one tone above GitHub's own page
-# (GitHub is the --c-page here, so the card must still read as a separate surface).
+def oklch(l, c, h):
+    """oklch -> (r, g, b) 0-255, clipped to sRGB."""
+    import math
+    a, b = c * math.cos(math.radians(h)), c * math.sin(math.radians(h))
+    l_, m_, s_ = (l + 0.3963377774 * a + 0.2158037573 * b) ** 3, (l - 0.1055613458 * a - 0.0638541728 * b) ** 3, (l - 0.0894841775 * a - 1.2914855480 * b) ** 3
+    lin = (4.0767416621 * l_ - 3.3077115913 * m_ + 0.2309699292 * s_,
+           -1.2684380046 * l_ + 2.6097574011 * m_ - 0.3413193965 * s_,
+           -0.0041960863 * l_ - 0.7034186147 * m_ + 1.7076147010 * s_)
+    enc = lambda x: 12.92 * x if x <= 0.0031308 else 1.055 * x ** (1 / 2.4) - 0.055
+    return tuple(round(min(1, max(0, enc(x))) * 255) for x in lin)
+
+def hx(rgb):
+    return "#%02x%02x%02x" % rgb
+
+def rgba(rgb, a):
+    return "rgba(%d,%d,%d,%s)" % (*rgb, a)
+
+# calm-ui tint, kept light: every surface and the ink share one hue family (the brand violet)
+# at low chroma. The card sits one tone above GitHub's own page, which plays --c-page here.
+HUE = 285
+_ink_d, _ink_l = oklch(0.97, 0.01, HUE), oklch(0.2, 0.025, HUE)
 THEMES = {
     "": {  # dark
-        "card": "#17171a", "raised": "#242428", "sunken": "#0f0f11",
-        "line": "rgba(255,255,255,.07)",
-        "ink": "#f4f4f3", "ink2": "rgba(244,244,243,.6)", "ink3": "rgba(244,244,243,.36)",
-        "accent": "#f4f4f3", "on_accent": "#0b0b0c",
-        "pos": "#3ddc84", "brand": "#7b61ff", "pos_rgb": (61, 220, 132), "empty_rgb": (36, 36, 40), "wave": "#c9f7da",
+        "card": hx(oklch(0.215, 0.022, HUE)), "raised": hx(oklch(0.285, 0.032, HUE)), "sunken": hx(oklch(0.17, 0.018, HUE)),
+        "line": rgba(_ink_d, .07),
+        "ink": hx(_ink_d), "ink2": rgba(_ink_d, .62), "ink3": rgba(_ink_d, .38),
+        "accent": hx(_ink_d), "on_accent": hx(oklch(0.2, 0.03, HUE)),
+        "pos": "#3ddc84", "brand": "#7b61ff", "pos_rgb": (61, 220, 132), "empty_rgb": oklch(0.275, 0.028, HUE), "wave": "#c9f7da",
     },
     "-light": {
-        "card": "#f3f3f1", "raised": "#ffffff", "sunken": "#e4e4e1",
-        "line": "rgba(10,10,12,.08)",
-        "ink": "#111113", "ink2": "rgba(17,17,19,.6)", "ink3": "rgba(17,17,19,.38)",
-        "accent": "#111113", "on_accent": "#fafaf9",
-        "pos": "#13a45b", "brand": "#7b61ff", "pos_rgb": (19, 164, 91), "empty_rgb": (228, 228, 225), "wave": "#0b7a42",
+        "card": hx(oklch(0.965, 0.012, HUE)), "raised": hx(oklch(0.995, 0.004, HUE)), "sunken": hx(oklch(0.91, 0.016, HUE)),
+        "line": rgba(_ink_l, .08),
+        "ink": hx(_ink_l), "ink2": rgba(_ink_l, .62), "ink3": rgba(_ink_l, .4),
+        "accent": hx(_ink_l), "on_accent": hx(oklch(0.985, 0.006, HUE)),
+        "pos": "#13a45b", "brand": "#7b61ff", "pos_rgb": (19, 164, 91), "empty_rgb": oklch(0.915, 0.016, HUE), "wave": "#0b7a42",
     },
 }
 
