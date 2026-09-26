@@ -1,0 +1,177 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 870" width="100%" height="870" fill="none">
+  <defs>
+    <!-- Background Gradient Spotlight -->
+    <radialGradient id="spotlightUnified" cx="50%" cy="0%" r="90%" fx="50%" fy="0%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.4"/>
+      <stop offset="45%" stop-color="#0F172A" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#090A0F" stop-opacity="1"/>
+    </radialGradient>
+
+    <!-- Subtle Border Stroke Gradient -->
+    <linearGradient id="borderGradUnified" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.10"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .mono-tag {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      fill: #86868B;
+    }
+    .h2 {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      fill: #F5F5F7;
+    }
+    .body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      font-size: 13.5px;
+      font-weight: 400;
+      line-height: 22px;
+      fill: #A1A1A6;
+    }
+    .cat-title {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      fill: #86868B;
+      text-transform: uppercase;
+    }
+    .cat-items {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 450;
+      letter-spacing: -0.1px;
+      fill: #F5F5F7;
+    }
+    .proj-title {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      font-size: 14.5px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      fill: #F5F5F7;
+    }
+    .proj-desc {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      font-size: 12.5px;
+      font-weight: 400;
+      fill: #86868B;
+    }
+    .proj-tags {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      fill: #A1A1A6;
+    }
+  </style>
+
+  <!-- Single Continuous Apple Card Background -->
+  <rect x="1" y="1" width="838" height="868" rx="20" fill="url(#spotlightUnified)" stroke="url(#borderGradUnified)" stroke-width="1.2"/>
+
+  <!-- ==================== SECTION 01: OVERVIEW ==================== -->
+  <g transform="translate(36, 32)">
+    <text x="0" y="0" class="mono-tag">// 01 . OVERVIEW</text>
+    <text x="0" y="28" class="h2">Systems Engineering &amp; Venture Architecture</text>
+    
+    <text x="0" y="60" class="body">Computer Engineer combining deep full-stack engineering expertise with venture architecture.</text>
+    <text x="0" y="82" class="body">Experienced in delivering scalable solutions at <tspan fill="#F5F5F7" font-weight="600">Microsoft</tspan> (.NET, Azure AI, microservices) and fintech platforms at <tspan fill="#F5F5F7" font-weight="600">ParamTech</tspan>.</text>
+    <text x="0" y="104" class="body">Currently co-founding <tspan fill="#F5F5F7" font-weight="600">Force Studio</tspan>, building autonomous AI agent workflows and interactive 3D web systems.</text>
+    
+    <!-- Inline capability list (no chunky nested rects) -->
+    <text x="0" y="136" class="body" fill="#86868B">
+      <tspan fill="#D1D1D6" font-weight="500">✦ Autonomous AI Agents</tspan> &nbsp;&nbsp;&bull;&nbsp;&nbsp; 
+      <tspan fill="#D1D1D6" font-weight="500">✦ Distributed .NET Systems</tspan> &nbsp;&nbsp;&bull;&nbsp;&nbsp; 
+      <tspan fill="#D1D1D6" font-weight="500">✦ Spatial &amp; 3D Web</tspan> &nbsp;&nbsp;&bull;&nbsp;&nbsp; 
+      <tspan fill="#D1D1D6" font-weight="500">✦ Venture Advisory</tspan>
+    </text>
+  </g>
+
+  <!-- Hairline Divider 1 -->
+  <line x1="36" y1="216" x2="804" y2="216" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+
+  <!-- ==================== SECTION 02: ARCHITECTURE & TOOLKIT ==================== -->
+  <g transform="translate(36, 246)">
+    <text x="0" y="0" class="mono-tag">// 02 . ARCHITECTURE &amp; TOOLKIT</text>
+    <text x="0" y="28" class="h2">Core Technologies &amp; Ecosystem</text>
+
+    <!-- Row 1: Backend & Cloud -->
+    <g transform="translate(0, 56)">
+      <text x="0" y="14" class="cat-title">Backend &amp; Cloud</text>
+      <text x="170" y="14" class="cat-items">C# &nbsp;&bull;&nbsp; .NET 9 &nbsp;&bull;&nbsp; ASP.NET Core &nbsp;&bull;&nbsp; Node.js &nbsp;&bull;&nbsp; Python &nbsp;&bull;&nbsp; Microsoft Azure &nbsp;&bull;&nbsp; Docker</text>
+    </g>
+
+    <!-- Row 2: Data & Messaging -->
+    <g transform="translate(0, 92)">
+      <text x="0" y="14" class="cat-title">Data &amp; Messaging</text>
+      <text x="170" y="14" class="cat-items">PostgreSQL &nbsp;&bull;&nbsp; Redis &nbsp;&bull;&nbsp; RabbitMQ &nbsp;&bull;&nbsp; Apache Kafka &nbsp;&bull;&nbsp; Elasticsearch</text>
+    </g>
+
+    <!-- Row 3: Frontend & Creative -->
+    <g transform="translate(0, 128)">
+      <text x="0" y="14" class="cat-title">Frontend &amp; 3D</text>
+      <text x="170" y="14" class="cat-items">React.js &nbsp;&bull;&nbsp; Next.js &nbsp;&bull;&nbsp; TypeScript &nbsp;&bull;&nbsp; TailwindCSS &nbsp;&bull;&nbsp; Three.js &nbsp;&bull;&nbsp; Babylon.js &nbsp;&bull;&nbsp; Electron.js</text>
+    </g>
+
+    <!-- Row 4: AI & Automation -->
+    <g transform="translate(0, 164)">
+      <text x="0" y="14" class="cat-title">AI &amp; Automation</text>
+      <text x="170" y="14" class="cat-items">Autonomous Agents &nbsp;&bull;&nbsp; n8n Automations &nbsp;&bull;&nbsp; Azure AI &amp; ML.NET &nbsp;&bull;&nbsp; LLM Integrations &nbsp;&bull;&nbsp; CI / CD</text>
+    </g>
+  </g>
+
+  <!-- Hairline Divider 2 -->
+  <line x1="36" y1="462" x2="804" y2="462" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1"/>
+
+  <!-- ==================== SECTION 03: FEATURED VENTURES ==================== -->
+  <g transform="translate(36, 492)">
+    <text x="0" y="0" class="mono-tag">// 03 . FEATURED VENTURES</text>
+    <text x="0" y="28" class="h2">Selected Deployments &amp; Products</text>
+
+    <!-- Venture 1: Fagency -->
+    <g transform="translate(0, 56)">
+      <text x="0" y="14" class="proj-title">Fagency</text>
+      <text x="120" y="14" class="proj-desc">Autonomous Agency OS &bull; Uçtan uca ajans süreçlerini otonomlaştıran yapay zeka operasyon platformu.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">AI Agents &nbsp;/&nbsp; n8n &nbsp;/&nbsp; Next.js</text>
+    </g>
+    <line x1="0" y1="84" x2="768" y2="84" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+
+    <!-- Venture 2: KariyerAI -->
+    <g transform="translate(0, 102)">
+      <text x="0" y="14" class="proj-title">KariyerAI</text>
+      <text x="120" y="14" class="proj-desc">AI Career Intelligence &bull; İş arayanlar için ücretsiz CV analizi ve mülakat optimizasyon platformu.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">LLMs &nbsp;/&nbsp; React &nbsp;/&nbsp; FastAPI</text>
+    </g>
+    <line x1="0" y1="130" x2="768" y2="130" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+
+    <!-- Venture 3: VidAI -->
+    <g transform="translate(0, 148)">
+      <text x="0" y="14" class="proj-title">VidAI</text>
+      <text x="120" y="14" class="proj-desc">Automated Video Production &bull; Senaryodan montaja yapay zeka destekli video üretim hattı.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">AI/ML &nbsp;/&nbsp; Python &nbsp;/&nbsp; Azure</text>
+    </g>
+    <line x1="0" y1="176" x2="768" y2="176" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+
+    <!-- Venture 4: Screen Pet -->
+    <g transform="translate(0, 194)">
+      <text x="0" y="14" class="proj-title">Screen Pet</text>
+      <text x="120" y="14" class="proj-desc">Spatial Desktop Companion &bull; Kullanıcı ile masaüstünde etkileşime geçen interaktif sanal asistan.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">Electron &nbsp;/&nbsp; Three.js</text>
+    </g>
+    <line x1="0" y1="222" x2="768" y2="222" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+
+    <!-- Venture 5: LFG -->
+    <g transform="translate(0, 240)">
+      <text x="0" y="14" class="proj-title">LFG</text>
+      <text x="120" y="14" class="proj-desc">Gamer Matchmaking Platform &bull; Oyuncuların seviye ve tarzlarına göre takım kurduğu mobil ekosistem.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">React Native &nbsp;/&nbsp; WebSockets</text>
+    </g>
+  </g>
+</svg>

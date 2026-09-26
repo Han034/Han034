@@ -22,23 +22,13 @@
 
   <br/>
 
-  <!-- Claude-Style Real-time Node Activity Flow -->
-  <img src="./assets/claude-bar.svg" width="100%" alt="Neural Node Activity Flow" />
+  <!-- Claude-Style Real-time Node Activity Flow (Commit Nodes Flowing Slowly) -->
+  <img src="./assets/claude-bar.svg" width="100%" alt="Claude Neural Node Activity Flow" />
 
   <br/><br/>
 
-  <!-- Section 01: Overview Card -->
-  <img src="./assets/card-about.svg" width="100%" alt="Overview & Profile Card" />
-
-  <br/><br/>
-
-  <!-- Section 02: Architecture & Toolkit Card -->
-  <img src="./assets/card-stack.svg" width="100%" alt="Architecture & Ecosystem Card" />
-
-  <br/><br/>
-
-  <!-- Section 03: Featured Ventures & Products Card -->
-  <img src="./assets/card-ventures.svg" width="100%" alt="Featured Deployments Card" />
+  <!-- Unified Systems & Engineering Card (01 Overview / 02 Architecture / 03 Ventures) -->
+  <img src="./assets/card-unified.svg" width="100%" alt="Systems & Engineering Architecture" />
 
   <br/><br/>
 
