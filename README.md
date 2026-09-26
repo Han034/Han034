@@ -1,34 +1,51 @@
 <div align="center">
 
-  <!-- Apple Minimalist SVG Header -->
-  <img src="./assets/header.svg" width="100%" alt="Mehmet Emin Becek - Header" />
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/header-light.svg" />
+  <img src="./assets/header.svg" width="100%" alt="Mehmet Emin Becek — Full-Stack Software Engineer & AI Systems Architect" />
+</picture>
 
-  <br/><br/>
+<br/><br/>
 
-  <!-- Minimalist Pill Action Buttons (No Logo, Pure Typography & Arrow) -->
-  <p align="center">
-    <a href="https://www.linkedin.com/in/mehmet-emin-becek-b5326a20b/" target="_blank"><img src="./assets/btn-linkedin.svg" height="34" alt="LinkedIn" /></a>&nbsp;&nbsp;&nbsp;<a href="mailto:mehmeteminliyiz@gmail.com"><img src="./assets/btn-email.svg" height="34" alt="Email" /></a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/Han034" target="_blank"><img src="./assets/btn-github.svg" height="34" alt="GitHub" /></a>
-  </p>
+<a href="https://www.linkedin.com/in/mehmet-emin-becek-b5326a20b/"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/btn-linkedin-light.svg" /><img src="./assets/btn-linkedin.svg" height="36" alt="LinkedIn" /></picture></a>&nbsp;&nbsp;<a href="mailto:mehmeteminliyiz@gmail.com"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/btn-email-light.svg" /><img src="./assets/btn-email.svg" height="36" alt="E-mail" /></picture></a>&nbsp;&nbsp;<a href="https://github.com/Han034"><picture><source media="(prefers-color-scheme: light)" srcset="./assets/btn-github-light.svg" /><img src="./assets/btn-github.svg" height="36" alt="GitHub" /></picture></a>
 
-  <br/>
+<br/><br/>
 
-  <!-- Claude-Style Real-time Node Activity Flow (Commit Nodes Flowing Slowly) -->
-  <img src="./assets/claude-bar.svg" width="100%" alt="Claude Neural Node Activity Flow" />
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/card-overview-light.svg" />
+  <img src="./assets/card-overview.svg" width="100%" alt="Overview" />
+</picture>
 
-  <br/><br/>
+<br/><br/>
 
-  <!-- Unified Systems & Engineering Card (01 Overview / 02 Architecture / 03 Ventures) -->
-  <img src="./assets/card-unified.svg" width="100%" alt="Systems & Engineering Architecture" />
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/card-toolkit-light.svg" />
+  <img src="./assets/card-toolkit.svg" width="100%" alt="Toolkit" />
+</picture>
 
-  <br/><br/>
+<br/><br/>
 
-  <!-- Activity & Consistency -->
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Han034&theme=dark&background=0A0A0C&border=1E222B&stroke=1E222B&ring=2997FF&fire=2997FF&currStreakNum=F5F5F7&sideNums=86868B&currStreakLabel=2997FF&sideLabels=86868B&dates=6E6E73&border_radius=16" alt="GitHub Streak" />
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/card-ventures-light.svg" />
+  <img src="./assets/card-ventures.svg" width="100%" alt="Ventures" />
+</picture>
 
-  <br/><br/>
+<br/><br/>
 
-  <p align="center" style="font-size: 12.5px; color: #86868B; letter-spacing: -0.2px;">
-    <i>Designed with an obsession for systems architecture, minimalism, and craftsmanship.</i>
-  </p>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="./assets/activity-light.svg" />
+  <img src="./assets/activity.svg" width="100%" alt="Always building" />
+</picture>
+
+<br/><br/>
+
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=Han034&hide_border=true&border_radius=24&background=F3F3F1&stroke=E4E4E1&ring=111113&fire=111113&currStreakNum=111113&currStreakLabel=111113&sideNums=111113&sideLabels=76767A&dates=96969A" />
+  <img src="https://streak-stats.demolab.com/?user=Han034&hide_border=true&border_radius=24&background=17171A&stroke=242428&ring=F4F4F3&fire=F4F4F3&currStreakNum=F4F4F3&currStreakLabel=F4F4F3&sideNums=F4F4F3&sideLabels=9C9C9B&dates=6C6C6B" alt="GitHub streak" />
+</picture>
+
+<br/><br/>
+
+<sub>Designed with an obsession for systems architecture, minimalism and craftsmanship.</sub>
 
 </div>
