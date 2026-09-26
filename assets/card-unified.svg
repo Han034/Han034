@@ -85,12 +85,15 @@
     <text x="0" y="82" class="body">Experienced in delivering scalable solutions at <tspan fill="#F5F5F7" font-weight="600">Microsoft</tspan> (.NET, Azure AI, microservices) and fintech platforms at <tspan fill="#F5F5F7" font-weight="600">ParamTech</tspan>.</text>
     <text x="0" y="104" class="body">Currently co-founding <tspan fill="#F5F5F7" font-weight="600">Force Studio</tspan>, building autonomous AI agent workflows and interactive 3D web systems.</text>
     
-    <!-- Inline capability list (no chunky nested rects) -->
-    <text x="0" y="136" class="body" fill="#86868B">
-      <tspan fill="#D1D1D6" font-weight="500">✦ Autonomous AI Agents</tspan> &nbsp;&nbsp;&bull;&nbsp;&nbsp; 
-      <tspan fill="#D1D1D6" font-weight="500">✦ Distributed .NET Systems</tspan> &nbsp;&nbsp;&bull;&nbsp;&nbsp; 
-      <tspan fill="#D1D1D6" font-weight="500">✦ Spatial &amp; 3D Web</tspan> &nbsp;&nbsp;&bull;&nbsp;&nbsp; 
-      <tspan fill="#D1D1D6" font-weight="500">✦ Venture Advisory</tspan>
+    <!-- Inline capability list -->
+    <text x="0" y="136" class="body">
+      <tspan fill="#D1D1D6" font-weight="500">&#x2726; Autonomous AI Agents</tspan>
+      <tspan fill="#6E6E73">   &#x2022;   </tspan>
+      <tspan fill="#D1D1D6" font-weight="500">&#x2726; Distributed .NET Systems</tspan>
+      <tspan fill="#6E6E73">   &#x2022;   </tspan>
+      <tspan fill="#D1D1D6" font-weight="500">&#x2726; Spatial &amp; 3D Web</tspan>
+      <tspan fill="#6E6E73">   &#x2022;   </tspan>
+      <tspan fill="#D1D1D6" font-weight="500">&#x2726; Venture Advisory</tspan>
     </text>
   </g>
 
@@ -105,25 +108,25 @@
     <!-- Row 1: Backend & Cloud -->
     <g transform="translate(0, 56)">
       <text x="0" y="14" class="cat-title">Backend &amp; Cloud</text>
-      <text x="170" y="14" class="cat-items">C# &nbsp;&bull;&nbsp; .NET 9 &nbsp;&bull;&nbsp; ASP.NET Core &nbsp;&bull;&nbsp; Node.js &nbsp;&bull;&nbsp; Python &nbsp;&bull;&nbsp; Microsoft Azure &nbsp;&bull;&nbsp; Docker</text>
+      <text x="170" y="14" class="cat-items">C#  &#x2022;  .NET 9  &#x2022;  ASP.NET Core  &#x2022;  Node.js  &#x2022;  Python  &#x2022;  Microsoft Azure  &#x2022;  Docker</text>
     </g>
 
     <!-- Row 2: Data & Messaging -->
     <g transform="translate(0, 92)">
       <text x="0" y="14" class="cat-title">Data &amp; Messaging</text>
-      <text x="170" y="14" class="cat-items">PostgreSQL &nbsp;&bull;&nbsp; Redis &nbsp;&bull;&nbsp; RabbitMQ &nbsp;&bull;&nbsp; Apache Kafka &nbsp;&bull;&nbsp; Elasticsearch</text>
+      <text x="170" y="14" class="cat-items">PostgreSQL  &#x2022;  Redis  &#x2022;  RabbitMQ  &#x2022;  Apache Kafka  &#x2022;  Elasticsearch</text>
     </g>
 
     <!-- Row 3: Frontend & Creative -->
     <g transform="translate(0, 128)">
       <text x="0" y="14" class="cat-title">Frontend &amp; 3D</text>
-      <text x="170" y="14" class="cat-items">React.js &nbsp;&bull;&nbsp; Next.js &nbsp;&bull;&nbsp; TypeScript &nbsp;&bull;&nbsp; TailwindCSS &nbsp;&bull;&nbsp; Three.js &nbsp;&bull;&nbsp; Babylon.js &nbsp;&bull;&nbsp; Electron.js</text>
+      <text x="170" y="14" class="cat-items">React.js  &#x2022;  Next.js  &#x2022;  TypeScript  &#x2022;  TailwindCSS  &#x2022;  Three.js  &#x2022;  Babylon.js  &#x2022;  Electron.js</text>
     </g>
 
     <!-- Row 4: AI & Automation -->
     <g transform="translate(0, 164)">
       <text x="0" y="14" class="cat-title">AI &amp; Automation</text>
-      <text x="170" y="14" class="cat-items">Autonomous Agents &nbsp;&bull;&nbsp; n8n Automations &nbsp;&bull;&nbsp; Azure AI &amp; ML.NET &nbsp;&bull;&nbsp; LLM Integrations &nbsp;&bull;&nbsp; CI / CD</text>
+      <text x="170" y="14" class="cat-items">Autonomous Agents  &#x2022;  n8n Automations  &#x2022;  Azure AI &amp; ML.NET  &#x2022;  LLM Integrations  &#x2022;  CI / CD</text>
     </g>
   </g>
 
@@ -138,40 +141,40 @@
     <!-- Venture 1: Fagency -->
     <g transform="translate(0, 56)">
       <text x="0" y="14" class="proj-title">Fagency</text>
-      <text x="120" y="14" class="proj-desc">Autonomous Agency OS &bull; Uçtan uca ajans süreçlerini otonomlaştıran yapay zeka operasyon platformu.</text>
-      <text x="768" y="14" text-anchor="end" class="proj-tags">AI Agents &nbsp;/&nbsp; n8n &nbsp;/&nbsp; Next.js</text>
+      <text x="120" y="14" class="proj-desc">Autonomous Agency OS &#x2022; U&#xE7;tan uca ajans s&#xFC;re&#xE7;lerini otonomla&#x15F;t&#x131;ran yapay zeka operasyon platformu.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">AI Agents  /  n8n  /  Next.js</text>
     </g>
     <line x1="0" y1="84" x2="768" y2="84" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
 
     <!-- Venture 2: KariyerAI -->
     <g transform="translate(0, 102)">
       <text x="0" y="14" class="proj-title">KariyerAI</text>
-      <text x="120" y="14" class="proj-desc">AI Career Intelligence &bull; İş arayanlar için ücretsiz CV analizi ve mülakat optimizasyon platformu.</text>
-      <text x="768" y="14" text-anchor="end" class="proj-tags">LLMs &nbsp;/&nbsp; React &nbsp;/&nbsp; FastAPI</text>
+      <text x="120" y="14" class="proj-desc">AI Career Intelligence &#x2022; &#x130;&#x15F; arayanlar i&#xE7;in &#xFC;cretsiz CV analizi ve m&#xFC;lakat optimizasyon platformu.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">LLMs  /  React  /  FastAPI</text>
     </g>
     <line x1="0" y1="130" x2="768" y2="130" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
 
     <!-- Venture 3: VidAI -->
     <g transform="translate(0, 148)">
       <text x="0" y="14" class="proj-title">VidAI</text>
-      <text x="120" y="14" class="proj-desc">Automated Video Production &bull; Senaryodan montaja yapay zeka destekli video üretim hattı.</text>
-      <text x="768" y="14" text-anchor="end" class="proj-tags">AI/ML &nbsp;/&nbsp; Python &nbsp;/&nbsp; Azure</text>
+      <text x="120" y="14" class="proj-desc">Automated Video Production &#x2022; Senaryodan montaja yapay zeka destekli video &#xFC;retim hatt&#x131;.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">AI/ML  /  Python  /  Azure</text>
     </g>
     <line x1="0" y1="176" x2="768" y2="176" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
 
     <!-- Venture 4: Screen Pet -->
     <g transform="translate(0, 194)">
       <text x="0" y="14" class="proj-title">Screen Pet</text>
-      <text x="120" y="14" class="proj-desc">Spatial Desktop Companion &bull; Kullanıcı ile masaüstünde etkileşime geçen interaktif sanal asistan.</text>
-      <text x="768" y="14" text-anchor="end" class="proj-tags">Electron &nbsp;/&nbsp; Three.js</text>
+      <text x="120" y="14" class="proj-desc">Spatial Desktop Companion &#x2022; Kullan&#x131;c&#x131; ile masa&#xFC;st&#xFC;nde etkile&#x15F;ime ge&#xE7;en interaktif sanal asistan.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">Electron  /  Three.js</text>
     </g>
     <line x1="0" y1="222" x2="768" y2="222" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
 
     <!-- Venture 5: LFG -->
     <g transform="translate(0, 240)">
       <text x="0" y="14" class="proj-title">LFG</text>
-      <text x="120" y="14" class="proj-desc">Gamer Matchmaking Platform &bull; Oyuncuların seviye ve tarzlarına göre takım kurduğu mobil ekosistem.</text>
-      <text x="768" y="14" text-anchor="end" class="proj-tags">React Native &nbsp;/&nbsp; WebSockets</text>
+      <text x="120" y="14" class="proj-desc">Gamer Matchmaking Platform &#x2022; Oyuncular&#x131;n seviye ve tarzlar&#x131;na g&#xF6;re tak&#x131;m kurdu&#x11F;u mobil ekosistem.</text>
+      <text x="768" y="14" text-anchor="end" class="proj-tags">React Native  /  WebSockets</text>
     </g>
   </g>
 </svg>

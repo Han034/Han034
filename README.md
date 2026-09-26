@@ -7,17 +7,7 @@
 
   <!-- Minimalist Pill Action Buttons (No Logo, Pure Typography & Arrow) -->
   <p align="center">
-    <a href="https://www.linkedin.com/in/mehmet-emin-becek-b5326a20b/" target="_blank">
-      <img src="./assets/btn-linkedin.svg" height="34" alt="LinkedIn" />
-    </a>
-    &nbsp;
-    <a href="mailto:mehmeteminliyiz@gmail.com">
-      <img src="./assets/btn-email.svg" height="34" alt="Email" />
-    </a>
-    &nbsp;
-    <a href="https://github.com/Han034" target="_blank">
-      <img src="./assets/btn-github.svg" height="34" alt="GitHub" />
-    </a>
+    <a href="https://www.linkedin.com/in/mehmet-emin-becek-b5326a20b/" target="_blank"><img src="./assets/btn-linkedin.svg" height="34" alt="LinkedIn" /></a>&nbsp;&nbsp;&nbsp;<a href="mailto:mehmeteminliyiz@gmail.com"><img src="./assets/btn-email.svg" height="34" alt="Email" /></a>&nbsp;&nbsp;&nbsp;<a href="https://github.com/Han034" target="_blank"><img src="./assets/btn-github.svg" height="34" alt="GitHub" /></a>
   </p>
 
   <br/>
