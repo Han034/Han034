@@ -34,7 +34,7 @@
 
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="./assets/activity-light.svg" />
-  <img src="./assets/activity.svg" width="100%" alt="Always building" />
+  <img src="./assets/activity.svg" width="100%" alt="Contributions in the last year" />
 </picture>
 
 <br/><br/>

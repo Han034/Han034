@@ -3,9 +3,9 @@
 SVG text never wraps on its own, so every line is measured and wrapped here.
 Run: python scripts/build.py  (writes <name>.svg for dark and <name>-light.svg for light)
 """
-import math
 import pathlib
-import random
+import re
+import urllib.request
 from html import escape
 
 OUT = pathlib.Path(__file__).resolve().parent.parent / "assets"
@@ -21,17 +21,15 @@ THEMES = {
         "card": "#17171a", "raised": "#242428", "sunken": "#0f0f11",
         "line": "rgba(255,255,255,.07)",
         "ink": "#f4f4f3", "ink2": "rgba(244,244,243,.6)", "ink3": "rgba(244,244,243,.36)",
-        "ink_rgb": (244, 244, 243), "sunken_rgb": (15, 15, 17),
         "accent": "#f4f4f3", "on_accent": "#0b0b0c",
-        "pos": "#3ddc84", "brand": "#7b61ff",
+        "pos": "#3ddc84", "brand": "#7b61ff", "pos_rgb": (61, 220, 132), "empty_rgb": (36, 36, 40), "wave": "#c9f7da",
     },
     "-light": {
         "card": "#f3f3f1", "raised": "#ffffff", "sunken": "#e4e4e1",
         "line": "rgba(10,10,12,.08)",
         "ink": "#111113", "ink2": "rgba(17,17,19,.6)", "ink3": "rgba(17,17,19,.38)",
-        "ink_rgb": (17, 17, 19), "sunken_rgb": (228, 228, 225),
         "accent": "#111113", "on_accent": "#fafaf9",
-        "pos": "#13a45b", "brand": "#7b61ff",
+        "pos": "#13a45b", "brand": "#7b61ff", "pos_rgb": (19, 164, 91), "empty_rgb": (228, 228, 225), "wave": "#0b7a42",
     },
 }
 
@@ -162,31 +160,61 @@ def button(kind, label, primary, c):
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w:.0f}" height="{h}" viewBox="0 0 {w:.1f} {h}" fill="none" role="img">'
             f'<title>{escape(label)}</title>{b}</svg>\n')
 
-def activity(c):
-    rng = random.Random(34)
-    cell, gap, rows = 9, 3, 7
-    cols = (INNER + gap) // (cell + gap)
-    b = [t(PAD, PAD + 10, "Always building", 10.5, c["ink3"], 600, tracking=0.84, upper=True)]
-    lw = text_w("Live", 11.5, 600) + 31
-    lx = W - PAD - lw
-    b.append(f'<rect x="{lx:.1f}" y="{PAD - 7}" width="{lw:.1f}" height="24" rx="12" fill="{c["raised"]}"/>')
-    b.append(f'<circle cx="{lx + 12:.1f}" cy="{PAD + 5}" r="3" fill="{c["pos"]}"/>')
-    b.append(t(lx + 22, PAD + 9.2, "Live", 11.5, c["ink2"], 600))
-    top = PAD + 34
-    ir, sr = c["ink_rgb"], c["sunken_rgb"]
+USER = "Han034"
+
+def fetch_contributions():
+    """GitHub's public contribution calendar -> (levels[row][col], total). None when offline."""
+    try:
+        req = urllib.request.Request(f"https://github.com/users/{USER}/contributions", headers={"User-Agent": "profile-build"})
+        html = urllib.request.urlopen(req, timeout=20).read().decode("utf-8")
+    except OSError:
+        return None
+    cells = re.findall(r'id="contribution-day-component-(\d)-(\d+)" data-level="(\d)"', html)
+    total = re.search(r"([\d,]+)\s+contributions?\s+in the last year", html)
+    if not cells:
+        return None
+    cols = max(int(c) for _, c, _ in cells) + 1
+    grid = [[None] * cols for _ in range(7)]
+    for r, c, lv in cells:
+        grid[int(r)][int(c)] = int(lv)
+    return grid, (total.group(1) if total else "")
+
+def mix(a, b, k):
+    return "#%02x%02x%02x" % tuple(round(a[i] + (b[i] - a[i]) * k) for i in range(3))
+
+# the wave: each cell lights up as a pulse passes through it, column by column,
+# with a short trail behind the head. Busier days glow brighter.
+WAVE_PEAKS = [0.22, 0.5, 0.65, 0.8, 0.95]
+WAVE_CSS = "".join(
+    f"@keyframes f{i}{{0%{{opacity:0}}3%{{opacity:{p}}}16%{{opacity:0}}100%{{opacity:0}}}}.w{i}{{animation:f{i} 7s linear infinite both}}"
+    for i, p in enumerate(WAVE_PEAKS)
+) + "@media (prefers-reduced-motion:reduce){[class^=w]{animation:none}}"
+
+def activity(c, data):
+    grid, total = data
+    cols, gap = len(grid[0]), 3
+    cell = (INNER - (cols - 1) * gap) / cols
+    levels = [mix(c["empty_rgb"], c["pos_rgb"], k) for k in (0, 0.3, 0.5, 0.75, 1)]   # GitHub's five levels
+    b = [f"<style>{WAVE_CSS}</style>",
+         t(PAD, PAD + 10, "Contributions", 10.5, c["ink3"], 600, tracking=0.84, upper=True)]
+    if total:
+        b.append(t(W - PAD, PAD + 10, f"{total} in the last year", 12, c["ink2"], 500, "end"))
+    top = PAD + 30
+    base, wave = [], []
     for col in range(cols):
-        trend = 0.25 + 0.55 * (col / cols) ** 1.6          # busier towards now
-        for r in range(rows):
-            v = 0 if rng.random() < 0.18 else min(1, max(0, rng.gauss(trend, 0.2)))
-            v *= 0.9
-            last = col == cols - 1 and r == rows - 1
-            if last: v = 1
-            rgb = tuple(round(sr[i] + (ir[i] - sr[i]) * v) for i in range(3))
+        for r in range(7):
+            lv = grid[r][col]
+            if lv is None:           # days after today
+                continue
             x, y = PAD + col * (cell + gap), top + r * (cell + gap)
-            anim = ('<animate attributeName="opacity" values="1;.4;1" dur="2.4s" repeatCount="indefinite"/>' if last else "")
-            b.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="3" fill="rgb{rgb}">{anim}</rect>')
-    h = top + rows * (cell + gap) - gap + PAD
-    return svg(h, "".join(b), c, title="Activity")
+            geo = f'x="{x:.2f}" y="{y:.2f}" width="{cell:.2f}" height="{cell:.2f}" rx="3"'
+            base.append(f'<rect {geo} fill="{levels[lv]}"/>')
+            delay = col * 0.08 + r * 0.035
+            wave.append(f'<rect {geo} class="w{lv}" opacity="0" style="animation-delay:{delay:.3f}s"/>')
+    b += base
+    b.append(f'<g fill="{c["wave"]}">{"".join(wave)}</g>')
+    h = top + 7 * (cell + gap) - gap + PAD
+    return svg(round(h), "".join(b), c, title="Contributions")
 
 OVERVIEW = [
     "Computer Engineer combining deep full-stack engineering with venture architecture.",
@@ -260,17 +288,22 @@ def ventures(c):
     return svg(y + PAD - 6, "".join(b), c, title="Ventures")
 
 def main():
+    data = fetch_contributions()
+    if data is None:
+        print("contribution calendar unreachable, keeping the current activity cards")
     for suffix, c in THEMES.items():
         files = {
-            "header": header(c), "activity": activity(c), "card-overview": overview(c),
+            "header": header(c), "card-overview": overview(c),
             "card-toolkit": toolkit(c), "card-ventures": ventures(c),
             "btn-linkedin": button("in", "LinkedIn", True, c),
             "btn-email": button("mail", "E-mail", False, c),
             "btn-github": button("gh", "GitHub", False, c),
         }
+        if data:
+            files["activity"] = activity(c, data)
         for name, s in files.items():
             (OUT / f"{name}{suffix}.svg").write_text(s, encoding="utf-8")
-    print("built", len(THEMES) * 8, "files in", OUT)
+    print("built", OUT)
 
 if __name__ == "__main__":
     main()
